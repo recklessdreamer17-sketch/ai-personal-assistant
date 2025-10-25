@@ -268,7 +268,6 @@ Provide a helpful response that addresses the user's request while offering inte
     this.saveTasks();
     this.updateTaskDisplay();
   }
-
   generateProductivityInsights() {
     const insights = [
       `You've completed ${this.userContext.completedToday} tasks today - ${this.userContext.completedToday >= 5 ? 'excellent progress!' : 'you can do more!'}`,
@@ -280,28 +279,28 @@ Provide a helpful response that addresses the user's request while offering inte
   }
 
   generateRecommendations() {
-    const recommendations = [
-      'Focus on your top 3 high-priority tasks first — they will deliver the biggest impact.',
-      'Consider time-blocking your calendar to protect focus time for important work.',
-      'Take a 5-minute break every 25 minutes to maintain peak performance (Pomodoro technique).',
-      'Review and update your task priorities weekly to stay aligned with your goals.'
+    const recs = [
+      'Focus on your top 3 high-priority tasks first to get the biggest impact.',
+      'Time-block your calendar to protect deep-work windows.',
+      'Use 25/5 focus cycles (Pomodoro) to maintain peak performance.',
+      'Review and update priorities weekly to stay aligned with goals.'
     ];
-    return recommendations[Math.floor(Math.random() * recommendations.length)];
+    return recs[Math.floor(Math.random() * recs.length)];
   }
 
   generateFallbackResponse() {
-    const fallbackResponses = [
-      "I’m here to help optimize your productivity! Try asking me to add a task, prioritize your work, or get insights about your performance.",
-      'Let me help you stay productive! You can ask me to schedule tasks, provide recommendations, or analyze your productivity patterns.',
-      "I'm your AI productivity assistant. I can help with task management, scheduling, and providing personalized productivity insights.",
-      'Tell me what you want to accomplish, and I’ll suggest the fastest next steps.'
+    const fallbacks = [
+      'Tell me what you want to accomplish, and I’ll suggest the fastest next steps.',
+      'Try: “add task: …”, “prioritize my tasks”, or “show my productivity insights”.',
+      'I can schedule tasks, provide recommendations, and analyze your productivity patterns.',
+      'Need momentum? Start with one high-priority task and a 25-minute focus block.'
     ];
-    return fallbackResponses[Math.floor(Math.random() * fallbackResponses.length)];
+    return fallbacks[Math.floor(Math.random() * fallbacks.length)];
   }
 
   // Data persistence methods
   loadUserContext() {
-    const defaultContext = {
+    const defaults = {
       productivityScore: 87,
       completedToday: 12,
       peakHours: ['9 AM - 11 AM', '2 PM - 4 PM'],
@@ -310,22 +309,22 @@ Provide a helpful response that addresses the user's request while offering inte
     };
     try {
       const saved = localStorage.getItem('aiAssistantContext');
-      return saved ? { ...defaultContext, ...JSON.parse(saved) } : defaultContext;
+      return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
     } catch {
-      return defaultContext;
+      return defaults;
     }
   }
 
   saveUserContext() {
     try {
       localStorage.setItem('aiAssistantContext', JSON.stringify(this.userContext));
-    } catch (error) {
-      console.error('Failed to save user context:', error);
+    } catch (err) {
+      console.error('Failed to save user context:', err);
     }
   }
 
   loadTasks() {
-    const defaultTasks = [
+    const defaults = [
       {
         id: 1,
         title: 'Complete quarterly business review presentation',
@@ -347,26 +346,28 @@ Provide a helpful response that addresses the user's request while offering inte
     ];
     try {
       const saved = localStorage.getItem('aiAssistantTasks');
-      return saved ? JSON.parse(saved) : defaultTasks;
+      return saved ? JSON.parse(saved) : defaults;
     } catch {
-      return defaultTasks;
+      return defaults;
     }
   }
 
   saveTasks() {
     try {
       localStorage.setItem('aiAssistantTasks', JSON.stringify(this.tasks));
-    } catch (error) {
-      console.error('Failed to save tasks:', error);
+    } catch (err) {
+      console.error('Failed to save tasks:', err);
     }
   }
 
   updateTaskDisplay() {
-    // Hook into the host app to re-render
+    // Re-render if the host app exposes a refresh hook
     if (window.app && typeof window.app.refreshTasks === 'function') {
       window.app.refreshTasks();
     }
   }
+
+  
 
   addToHistory(message, response) {
     this.conversationHistory.push({
