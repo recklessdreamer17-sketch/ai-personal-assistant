@@ -82,7 +82,7 @@ this.addMessageToChat('I apologize, but I encountered an issue processing
 your request. Please try again.', 'ai');
 } finally {
 this.isProcessing = false;
-  this.hideLoadingState();
+this.hideLoadingState();
 }
 }
 addMessageToChat(message, sender) {
@@ -126,7 +126,7 @@ const taskId = parseInt(taskItem.dataset.taskId);
 if (checkbox.checked) {
 taskItem.style.opacity = '0.6';
 taskItem.style.textDecoration = 'line-through';
-// Update task in AI assistant
+ // Update task in AI assistant
 const task = aiAssistant.tasks.find(t => t.id === taskId);
 if (task) {
 task.completed = true;
@@ -174,7 +174,7 @@ const container = document.getElementById(`${priority}PriorityTasks`);
 if (!container) return;
 tasks.forEach(task => {
 const taskElement = this.createTaskElement(task);
-  container.appendChild(taskElement);
+container.appendChild(taskElement);
 });
 });
 }
@@ -202,7 +202,7 @@ onclick="app.editTask(${task.id})">✏</button>
 <button class="task-action-btn"
 onclick="app.scheduleTask(${task.id})">⏰</button>
 </div>
-`;
+;
 return taskDiv;
 }
 generateTaskReason(task) {
