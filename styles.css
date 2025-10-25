@@ -1,0 +1,191 @@
+
+.insight-content h4 {
+color: #1e293b;
+margin-bottom: 10px;
+font-size: 1.1em;
+}
+.insight-content p {
+color: #64748b;
+line-height: 1.6;
+}
+/* Footer */
+.app-footer {
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(20px);
+border-radius: 20px;
+padding: 25px;
+text-align: center;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.footer-content {
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 20px;
+}
+.footer-content p {
+color: #64748b;
+margin: 0;
+}
+.footer-links {
+display: flex;
+gap: 20px;
+}
+.footer-links a {
+color: #667eea;
+text-decoration: none;
+font-weight: 500;
+transition: color 0.3s ease;
+}
+.footer-links a:hover {
+color: #5a67d8;
+}
+/* Loading Overlay */
+.loading-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.8);
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 1000;
+}
+.loading-content {
+background: white;
+padding: 40px;
+border-radius: 20px;
+text-align: center;
+max-width: 400px;
+width: 90%;
+}
+.loading-spinner {
+width: 50px;
+height: 50px;
+border: 4px solid #f3f4f6;
+border-top: 4px solid #667eea;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 0 auto 20px;
+}
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+.app-container {
+padding: 15px;
+}
+.header-content {
+flex-direction: column;
+text-align: center;
+}
+.status-section {
+flex-direction: column;
+gap: 15px;
+}
+.stats-dashboard {
+grid-template-columns: 1fr;
+}
+.input-container {
+flex-direction: column;
+}
+.send-btn {
+width: 100%;
+height: 50px;
+border-radius: 25px;
+}
+.panel-header {
+flex-direction: column;
+align-items: stretch;
+}
+.panel-controls {
+justify-content: center;
+}
+.task-item {
+flex-direction: column;
+align-items: stretch;
+gap: 15px;
+}
+.task-meta {
+flex-direction: column;
+gap: 5px;
+}
+.insights-grid {
+grid-template-columns: 1fr;
+}
+.footer-content {
+flex-direction: column;
+text-align: center;
+}
+}
+@media (max-width: 480px) {
+.logo-section h1 {
+font-size: 1.8em;
+}
+.stat-card {
+padding: 20px;
+}
+.stat-icon {
+font-size: 2em;
+width: 50px;
+height: 50px;
+}
+.ai-chat-section,
+.task-management,
+.insights-panel {
+padding: 20px;
+}
+.quick-actions {
+grid-template-columns: repeat(2, 1fr);
+}
+.insight-card {
+flex-direction: column;
+text-align: center;
+}
+}
+/* Custom Scrollbar */
+.chat-container::-webkit-scrollbar {
+width: 6px;
+}
+.chat-container::-webkit-scrollbar-track {
+background: #f1f5f9;
+border-radius: 3px;
+}
+.chat-container::-webkit-scrollbar-thumb {
+background: #cbd5e1;
+border-radius: 3px;
+}
+.chat-container::-webkit-scrollbar-thumb:hover {
+background: #94a3b8;
+}
+/* Notification Styles */
+.notification {
+position: fixed;
+top: 20px;
+right: 20px;
+padding: 15px 25px;
+background: #667eea;
+color: white;
+border-radius: 10px;
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+z-index: 1001;
+animation: slideInRight 0.3s ease-out;
+}
+@keyframes slideInRight {
+from { transform: translateX(100%); opacity: 0; }
+to { transform: translateX(0); opacity: 1; }
+}
+.notification.success {
+background: #10b981;
+}
+.notification.error {
+background: #ef4444;
+}
+.notification.warning {
+background: #f59e0b;
+  }
