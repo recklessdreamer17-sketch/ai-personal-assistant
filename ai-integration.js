@@ -257,8 +257,7 @@ const insights = [
 `You've completed ${this.userContext.completedToday} tasks today -
 ${this.userContext.completedToday >= 5 ? 'excellent progress!' : 'you can do more!'}`,
 `Your productivity score is ${this.userContext.productivityScore}% -
-${this.userContext.productivityScore >= 80 ? 'outstanding performance' : 'room for
-improvement'}`,
+${this.userContext.productivityScore >= 80 ? 'outstanding performance' : 'room for improvement'}`,
 `Peak productivity hours: ${this.userContext.peakHours.join(' and ')} - schedule
 important tasks during these times`,
 `You have ${this.tasks.filter(t => t.priority === 'high').length} high-priority tasks
