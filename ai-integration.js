@@ -1,7 +1,7 @@
 // AI Personal Assistant Integration
 class AIPersonalAssistant {
 constructor() {
-this.groqApiKey = 'gsk_luZkBEpyTVv7nGyNWpcqWGdyb3FYq-BlGCFz5NamW8DNeMWmG3Jmq'; // Will be provided by instructor
+this.groqApiKey = 'YOUR_API_KEY_HERE'; // Will be provided by instructor
 this.groqUrl = 'https://api.groq.com/openai/v1/chat/completions';
 this.conversationHistory = [];
 this.userContext = this.loadUserContext();
@@ -134,7 +134,7 @@ prompt += `\nCURRENT TASKS: ${JSON.stringify(this.tasks.slice(0, 5))}`;
 prompt += `\n\nProvide a helpful response that addresses the user's request
 while offering intelligent productivity insights and recommendations.`;
 return prompt;
-}
+ }
 extractTaskData(message) {
 // Simple extraction - in a real app, this would be more sophisticated
 const taskData = {
@@ -206,7 +206,7 @@ aiScore: this.calculateAIScore(taskData)
 };
 this.tasks.push(newTask);
 this.saveTasks();
-// Update UI
+  // Update UI
 this.updateTaskDisplay();
 }
 calculatePriority(taskData) {
@@ -251,7 +251,7 @@ return priorityOrder[b.priority] - priorityOrder[a.priority];
 });
 this.saveTasks();
 this.updateTaskDisplay();
-}  
+}
 generateProductivityInsights() {
 const insights = [
 `You've completed ${this.userContext.completedToday} tasks today -
@@ -280,7 +280,7 @@ return recommendations[Math.floor(Math.random() *
 recommendations.length)];
 }
 generateFallbackResponse(message) {
-const fallbackResponses = [
+  const fallbackResponses = [
 "I understand you're looking for help with productivity. Could you be more
 specific about what you'd like to accomplish?",
 "I'm here to help optimize your productivity! Try asking me to add a task,
