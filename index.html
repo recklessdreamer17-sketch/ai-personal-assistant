@@ -1,0 +1,220 @@
+
+<li>🔔 Automated reminders and follow-ups</li>
+<li>📈 Goal tracking and progress analysis</li>
+</ul>
+<p>What would you like to work on today?</p>
+</div>
+</div>
+</div>
+<div class="quick-actions">
+<button class="quick-action-btn" data-action="add-task">
+<span class="action-icon">➕</span>
+<span>Add Task</span>
+</button>
+<button class="quick-action-btn" data-action="prioritize">
+<span class="action-icon">🎯</span>
+<span>Prioritize</span>
+</button>
+<button class="quick-action-btn" data-action="schedule">
+<span class="action-icon">📅</span>
+<span>Schedule</span>
+</button>
+<button class="quick-action-btn" data-action="insights">
+<span class="action-icon">📊</span>
+<span>Insights</span>
+</button>
+</div>
+<div class="chat-input-section">
+<div class="input-container">
+<input type="text" id="chatInput" placeholder="Type your message or task
+here... (e.g., 'Add a meeting with Sarah tomorrow at 2 PM')" maxlength="500">
+<button id="sendButton" class="send-btn">
+<span class="send-icon">➤</span>
+</button>
+</div>
+<div class="input-suggestions" id="inputSuggestions">
+<button class="suggestion-btn">"Schedule my day for maximum
+productivity"</button>
+<button class="suggestion-btn">"What should I focus on next?"</button>
+<button class="suggestion-btn">"Add a reminder to call mom this
+evening"</button>
+<button class="suggestion-btn">"Show me my productivity
+insights"</button>
+</div>
+</div>
+</section>
+<!-- Task Management Panel -->
+<section class="task-management">
+<div class="panel-header">
+<h2>📋 Intelligent Task Management</h2>
+<div class="panel-controls">
+<button class="control-btn active" data-view="priority">Priority
+View</button>
+<button class="control-btn" data-view="timeline">Timeline</button>
+<button class="control-btn" data-view="categories">Categories</button>
+</div>
+</div>
+<div class="task-container" id="taskContainer">
+<!-- AI-Prioritized Tasks -->
+<div class="task-section">
+<h3>🔥 High Priority (AI Recommended)</h3>
+<div class="task-list" id="highPriorityTasks">
+<div class="task-item high-priority">
+<div class="task-checkbox">
+<input type="checkbox" id="task1">
+<label for="task1"></label>
+</div>
+<div class="task-content">
+<div class="task-title">Complete quarterly business review
+presentation</div>
+<div class="task-meta">
+<span class="task-due">Due: Today 5:00 PM</span>
+<span class="task-ai-score">AI Priority: 95%</span>
+</div>
+<div class="task-ai-reason">High impact, urgent deadline, affects
+team goals</div>
+</div>
+<div class="task-actions">
+<button class="task-action-btn">⏰</button>
+<button class="task-action-btn">✏</button>
+</div>
+</div>
+<div class="task-item high-priority">
+<div class="task-checkbox">
+<input type="checkbox" id="task2">
+<label for="task2"></label>
+</div>
+<div class="task-content">
+<div class="task-title">Review and respond to client proposal</div>
+<div class="task-meta">
+<span class="task-due">Due: Tomorrow 10:00 AM</span>
+<span class="task-ai-score">AI Priority: 88%</span>
+</div>
+<div class="task-ai-reason">Revenue impact, client relationship
+critical</div>
+</div>
+<div class="task-actions">
+<button class="task-action-btn">⏰</button>
+<button class="task-action-btn">✏</button>
+</div>
+</div>
+</div>
+</div>
+<div class="task-section">
+<h3>⚡ Medium Priority</h3>
+<div class="task-list" id="mediumPriorityTasks">
+<div class="task-item medium-priority">
+<div class="task-checkbox">
+<input type="checkbox" id="task3">
+<label for="task3"></label>
+</div>
+<div class="task-content">
+<div class="task-title">Update team on project progress</div>
+<div class="task-meta">
+<span class="task-due">Due: This week</span>
+<span class="task-ai-score">AI Priority: 65%</span>
+</div>
+<div class="task-ai-reason">Team coordination, regular
+communication</div>
+</div>
+<div class="task-actions">
+<button class="task-action-btn">⏰</button>
+<button class="task-action-btn">✏</button>
+</div>
+</div>
+</div>
+</div>
+<div class="task-section">
+<h3>📝 Low Priority</h3>
+<div class="task-list" id="lowPriorityTasks">
+<div class="task-item low-priority">
+<div class="task-checkbox">
+<input type="checkbox" id="task4">
+<label for="task4"></label>
+</div>
+<div class="task-content">
+<div class="task-title">Organize digital files and folders</div>
+<div class="task-meta">
+<span class="task-due">No deadline</span>
+<span class="task-ai-score">AI Priority: 25%</span>
+</div>
+<div class="task-ai-reason">Maintenance task, flexible timing</div>
+</div>
+<div class="task-actions">
+<button class="task-action-btn">⏰</button>
+<button class="task-action-btn">✏</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Insights Panel -->
+<section class="insights-panel">
+<div class="insights-header">
+<h2>🧠 AI Productivity Insights</h2>
+<button class="refresh-insights-btn" id="refreshInsights">🔄
+Refresh</button>
+</div>
+<div class="insights-grid">
+<div class="insight-card">
+<div class="insight-icon">⚡</div>
+<div class="insight-content">
+<h4>Peak Productivity Hours</h4>
+<p>You're most productive between <strong>9 AM - 11 AM</strong> and
+<strong>2 PM - 4 PM</strong>. Schedule your most important tasks during these
+windows.</p>
+</div>
+</div>
+<div class="insight-card">
+<div class="insight-icon">🎯</div>
+<div class="insight-content">
+<h4>Focus Recommendation</h4>
+<p>You have <strong>3 high-priority tasks</strong> due this week.
+Consider time-blocking 2 hours tomorrow morning to tackle the most critical
+ones.</p>
+</div>
+</div>
+<div class="insight-card">
+<div class="insight-icon">📈</div>
+<div class="insight-content">
+<h4>Weekly Progress</h4>
+<p>You've completed <strong>23% more tasks</strong> this week
+compared to last week. Your productivity trend is strongly positive!</p>
+</div>
+</div>
+<div class="insight-card">
+<div class="insight-icon">⚠</div>
+<div class="insight-content">
+<h4>Potential Bottleneck</h4>
+<p>You have <strong>5 tasks</strong> scheduled for Friday. Consider
+redistributing some to earlier in the week to avoid overload.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="app-footer">
+<div class="footer-content">
+<p>Powered by AI • Your data stays private • Built for productivity</p>
+<div class="footer-links">
+<a href="#privacy">Privacy</a>
+<a href="#help">Help</a>
+<a href="#feedback">Feedback</a>
+</div>
+</div>
+</footer>
+</div>
+<!-- Loading Overlay -->
+<div id="loadingOverlay" class="loading-overlay" style="display: none;">
+<div class="loading-content">
+<div class="loading-spinner"></div>
+<h3>AI is Processing...</h3>
+<p id="loadingMessage">Analyzing your request...</p>
+</div>
+</div>
+<script src="ai-integration.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
