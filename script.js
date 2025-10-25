@@ -98,12 +98,12 @@ class PersonalAssistantApp {
       this.refreshTasks();
       this.updateStats();
     } catch (error) {
-      console.error('Message processing error:', error);
-      this.addMessageToChat(
-        "I apologize, but I encountered an issue processing your request. Please try again.",
-        'ai'
-      );
-    } finally {
+  console.error('Message processing error:', error);
+  this.addMessageToChat(
+    "I apologize, but I encountered an issue processing your request. Please try again.",
+    'ai'
+  );
+} finally {
       this.isProcessing = false;
       this.hideLoadingState();
     }
@@ -289,9 +289,13 @@ class PersonalAssistantApp {
       const insights = await aiAssistant.analyzeProductivityPatterns();
       this.addMessageToChat(insights, 'ai');
       this.showNotification('Insights refreshed!', 'success');
-    } catch (error) {
-      this.showNotification('Failed to refresh insights', 'error');
-    } finally {
+   } catch (error) {
+  console.error('Message processing error:', error);
+  this.addMessageToChat(
+    "I apologize, but I encountered an issue processing your request. Please try again.",
+    'ai'
+  );
+} finally {
       this.hideLoadingState();
     }
   }
