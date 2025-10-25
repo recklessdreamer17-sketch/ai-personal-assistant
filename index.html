@@ -1,4 +1,83 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Personal Assistant - Smart Productivity</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&dis
+play=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app-container">
+<!-- Header Section -->
+<header class="app-header">
+<div class="header-content">
+<div class="logo-section">
+<h1>🤖 AI Personal Assistant</h1>
+<p>Your intelligent productivity companion</p>
+</div>
+<div class="status-section">
+<div class="ai-status">
+<span class="status-dot active"></span>
+<span>AI Engine Active</span>
+</div>
+<div class="productivity-score">
+<span class="score-label">Today's Productivity</span>
+<span class="score-value" id="productivityScore">87%</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Quick Stats Dashboard -->
+<section class="stats-dashboard">
+<div class="stat-card">
+<div class="stat-icon">✅</div>
+<div class="stat-info">
+<div class="stat-value" id="completedTasks">12</div>
+<div class="stat-label">Completed Today</div>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">⏰</div>
+<div class="stat-info">
+<div class="stat-value" id="timeManaged">6.5h</div>
+<div class="stat-label">Time Managed</div>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">🎯</div>
+<div class="stat-info">
+<div class="stat-value" id="focusScore">94%</div>
+<div class="stat-label">Focus Score</div>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">📈</div>
+<div class="stat-info">
+<div class="stat-value" id="weeklyTrend">+23%</div>
+<div class="stat-label">Weekly Trend</div>
+</div>
+</div>
+</section>
+<!-- AI Chat Interface -->
+<section class="ai-chat-section">
+<div class="chat-header">
+<h2>💬 Chat with Your AI Assistant</h2>
+<p>Ask me anything about your tasks, schedule, or productivity</p>
+</div>
+<div class="chat-container" id="chatContainer">
+<div class="message ai-message">
+<div class="message-avatar">🤖</div>
+<div class="message-content">
+<p>Hello! I'm your AI Personal Assistant. I can help you with:</p>
+<ul>
+<li>🎯 Intelligent task prioritization and management</li>
+<li>⏰ Smart scheduling and time blocking</li>
+<li>📊 Productivity insights and recommendations</li>
 <li>🔔 Automated reminders and follow-ups</li>
 <li>📈 Goal tracking and progress analysis</li>
 </ul>
@@ -217,4 +296,5 @@ redistributing some to earlier in the week to avoid overload.</p>
 <script src="script.js"></script>
 </body>
 </html>
+
 
