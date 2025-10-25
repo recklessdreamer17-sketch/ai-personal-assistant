@@ -1,7 +1,7 @@
 // AI Personal Assistant Integration
 class AIPersonalAssistant {
   constructor() {
-    this.groqApiKey = 'YOUR_API_KEY_HERE'; // Will be provided by instructor
+    this.groqApiKey = 'gsk_luZkBEpyTVv7nGyNWpcqWGdyb3FYq-BlGCFz5NamW8DNeMWmG3Jmq'; // Will be provided by instructor
     this.groqUrl = 'https://api.groq.com/openai/v1/chat/completions';
     this.conversationHistory = [];
     this.userContext = this.loadUserContext();
