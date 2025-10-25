@@ -241,34 +241,20 @@ class PersonalAssistantApp {
       <div class="task-actions">
         <button class="task-action-btn" onclick="app.editTask(${task.id})">✏</button>
         <button class="task-action-btn" onclick="app.scheduleTask(${task.id})">⏰</button>
-      </div>
+     ' </div>
     `;
 
     return taskDiv;
   }
-
-  generateTaskReason(task) {
-    const reasons = {
-      high: [
-        'High impact on goals',
-        'Urgent deadline approaching',
-        'Critical for success'
-      ],
-      medium: [
-        'Important for progress',
-        'Moderate deadline pressure',
-        'Good for momentum'
-      ],
-      low: [
-        'Nice to have completed',
-        'Flexible timing',
-        'Low impact activity'
-      ]
-    };
-    const reasonList = reasons[task.priority] || reasons.medium;
-    return reasonList[Math.floor(Math.random() * reasonList.length)];
-  }
-
+generateTaskReason(task) {
+  const reasons = {
+    high: ['High impact on goals', 'Urgent deadline approaching', 'Critical for success'],
+    medium: ['Important for progress', 'Moderate deadline pressure', 'Good for momentum'],
+    low: ['Nice to have completed', 'Flexible timing', 'Low impact activity']
+  };
+  const reasonList = reasons[task.priority] || reasons.medium;
+  return reasonList[Math.floor(Math.random() * reasonList.length)];
+}
   updateStats() {
     const stats = {
       completedTasks: aiAssistant.userContext.completedToday,
